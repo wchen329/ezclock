@@ -1,0 +1,5 @@
+ezClock/bin/*
+ezClock/obj/*
+ezClock/publish/*
+*.pfx
+*.suo

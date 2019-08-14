@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label_ezClock = new System.Windows.Forms.Label();
             this.button_Clock = new System.Windows.Forms.Button();
             this.listBox_ClockEntries = new System.Windows.Forms.ListBox();
             this.label_Slogan = new System.Windows.Forms.Label();
             this.button_Import = new System.Windows.Forms.Button();
             this.button_Export = new System.Windows.Forms.Button();
+            this.contextMenuStrip_ClockMan = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem_delEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip_ClockMan.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_ezClock
@@ -62,6 +66,7 @@
             this.listBox_ClockEntries.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox_ClockEntries.ContextMenuStrip = this.contextMenuStrip_ClockMan;
             this.listBox_ClockEntries.FormattingEnabled = true;
             this.listBox_ClockEntries.Location = new System.Drawing.Point(12, 110);
             this.listBox_ClockEntries.Name = "listBox_ClockEntries";
@@ -100,6 +105,21 @@
             this.button_Export.UseVisualStyleBackColor = true;
             this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
             // 
+            // contextMenuStrip_ClockMan
+            // 
+            this.contextMenuStrip_ClockMan.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem_delEntry});
+            this.contextMenuStrip_ClockMan.Name = "contextMenuStrip_ClockMan";
+            this.contextMenuStrip_ClockMan.Size = new System.Drawing.Size(138, 26);
+            this.contextMenuStrip_ClockMan.Text = "Timesheet Management";
+            // 
+            // toolStripMenuItem_delEntry
+            // 
+            this.toolStripMenuItem_delEntry.Name = "toolStripMenuItem_delEntry";
+            this.toolStripMenuItem_delEntry.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem_delEntry.Text = "Delete Entry";
+            this.toolStripMenuItem_delEntry.Click += new System.EventHandler(this.toolStripMenuItem_delEntry_Click);
+            // 
             // Form_ezClock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,6 +134,7 @@
             this.Name = "Form_ezClock";
             this.Text = "ezClock";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_ezClock_FormClosing);
+            this.contextMenuStrip_ClockMan.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +148,8 @@
         private System.Windows.Forms.Label label_Slogan;
         private System.Windows.Forms.Button button_Import;
         private System.Windows.Forms.Button button_Export;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_ClockMan;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_delEntry;
     }
 }
 

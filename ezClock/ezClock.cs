@@ -22,7 +22,7 @@ namespace ezClock
 
         public DialogResult ConfirmDiscardUnsavedTimestamps()
         {
-            DialogResult dialogconf = MessageBox.Show("Some timestamps have not yet been saved. Are you sure you want to continue?",
+            DialogResult dialogconf = MessageBox.Show("Some timestamps have not yet been saved. Would you like to save first?",
                     "Unsaved Timestamps",
                     MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Information);
@@ -50,9 +50,14 @@ namespace ezClock
             {
                 DialogResult unsavedclock_yesno = ConfirmDiscardUnsavedTimestamps();
 
-                if (unsavedclock_yesno == DialogResult.Cancel || unsavedclock_yesno == DialogResult.No)
+                if (unsavedclock_yesno == DialogResult.Cancel)
                 {
                     return;
+                }
+
+                else if (unsavedclock_yesno == DialogResult.Yes)
+                {
+                    this.button_Export_Click(sender, e);
                 }
             }
 
@@ -139,6 +144,14 @@ namespace ezClock
                 {
                     this.button_Export_Click(sender, e);
                 }
+            }
+        }
+
+        private void toolStripMenuItem_delEntry_Click(object sender, EventArgs e)
+        {
+            if (this.listBox_ClockEntries.SelectedIndex >= 0)
+            {
+                this.listBox_ClockEntries.Items.RemoveAt(this.listBox_ClockEntries.SelectedIndex);
             }
         }
     }
